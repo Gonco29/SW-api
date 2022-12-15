@@ -51,7 +51,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name :actor, :info, :image_url)
+    params.require(:character).permit(:name, :actor, :info, :image_url)
   end
 
 end
