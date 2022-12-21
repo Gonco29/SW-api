@@ -3,12 +3,12 @@ class Api::V1::CharactersController < ApplicationController
 
   def index
     characters = Character.all
-    render json: characters.to_json(only: %i[id name actor image_url]), status: 200
+    render json: characters.to_json(only: %i[id name actor info image_url]), status: 200
   end
 
   def show
     if @character
-      render json: @character.to_json(only: %i[id name actor image_url]), status: 200
+      render json: @character.to_json(only: %i[id name actor info image_url]), status: 200
     else
       render json: { status: 404, messege: 'Character not found' }, status: 404
     end
